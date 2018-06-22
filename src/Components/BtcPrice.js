@@ -9,15 +9,15 @@ export default class BtcPrice extends React.Component {
 
   constructor(props) {
     super(props);
-    this.updatePrice('BTC/USDT');
-    setInterval(this.updatePrice, 20000);
+    this.updatePrice();
+    setInterval(this.updatePrice, 10000);
   }
 
-  updatePrice = async (symbol) => {
+  updatePrice = async () => {
     const exchange = new ccxt.binance();
-    const ticker = await exchange.fetchTicker(symbol);
+    const ticker = await exchange.fetchTicker('BTC/USDT');
     this.setState({
-      price: ticker.close.toFixed(2)
+      price: ticker.last.toFixed(2)
     })
   };
 
