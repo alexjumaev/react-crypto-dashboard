@@ -1,5 +1,5 @@
 import React from 'react'
-import ccxt, { binance } from 'ccxt'
+import ccxt from 'ccxt'
 
 export default class BtcPrice extends React.Component {
 
@@ -9,17 +9,17 @@ export default class BtcPrice extends React.Component {
 
   constructor(props) {
     super(props);
-    this.updatePrice(binance);
-    setInterval(this.updatePrice, 5000);
+    this.updatePrice('BTC/USDT');
+    setInterval(this.updatePrice, 20000);
   }
 
-  updatePrice = () => (async () => {
+  updatePrice = async (symbol) => {
     const exchange = new ccxt.binance();
-    const ticker = await exchange.fetchTicker("BTC/USDT");
+    const ticker = await exchange.fetchTicker(symbol);
     this.setState({
       price: ticker.close.toFixed(2)
     })
-  }) ()
+  };
 
   render() {
 

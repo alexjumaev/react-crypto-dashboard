@@ -9,13 +9,6 @@ export default class Ticker extends React.Component {
     return (
       <div className="List" >
         Колличество поддерживаемых бирж - {ccxt.exchanges.length}
-          <ul>
-            {ccxt.exchanges.map(exch => (
-              <li key={exch} >
-                <label>{exch}</label>
-              </li>
-            ))}
-          </ul>
       </div>
     );
   }
