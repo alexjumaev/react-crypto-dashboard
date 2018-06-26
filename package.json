@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://saknhyuk.github.io/react-crypto-dashboard",
   "dependencies": {
-    "ccxt": "^1.14.253",
+    "ccxt": "^1.14.276",
     "gh-pages": "^1.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
