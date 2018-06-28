@@ -1,0 +1,11 @@
+.select-ticker {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.select-change {
+  /* display: flex; */
+  flex-direction: column;
+  padding: 20px;
+}

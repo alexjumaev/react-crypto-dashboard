@@ -15,6 +15,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prebuild": "cp webpack.config.prod.js node_modules/react-scripts/config"
   }
 }

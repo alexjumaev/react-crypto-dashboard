@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    div.main {
+      width: 900px;
+      margin: 0 auto;
+    }
+
+    ul.main-list {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      width: 100%;
+    }
+
+    ul.second-list {
+      display: none;
+    }
+
+    ul.second-list li {
+      margin: 0 20px;
+    }
+
+    ul.mail-list li:hover ul.second-list {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <nav>
+      <ul class="main-list">
+        <li>
+          <a href="#">Item</a>
+        </li>
+        <li>
+          <a href="#">Item</a>
+          <ul class="second-list">
+            <li>
+              <a href="#">Second</a>
+            </li>
+            <li>
+              <a href="#">Second</a>
+            </li>
+            <li>
+              <a href="#">121231</a>
+            </li>
+            <li>
+              <a href="#">123123</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Item</a>
+        </li>
+        <li>
+          <a href="#">Item</a>
+        </li>
+        <li>
+          <a href="#">Item</a>
+        </li>
+      </ul>
+    </nav>
+    <select name="name" id="adsas">
+      <option value="a">A</option>
+      <option value="b">fsd</option>
+      <option value="c">sdf</option>
+      <option value="g">fg</option>
+      <option value="2">gf</option>
+      <option value="f">vbcvb</option>
+    </select>
+  </div>
+</body>
+
+</html>

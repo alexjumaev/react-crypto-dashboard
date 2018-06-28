@@ -11,6 +11,12 @@ export default class Price extends React.Component {
     setInterval(this.updatePrice, 20000);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.symbol !== prevProps.symbol) {
+      this.updatePrice();
+    }
+  }
+
   updatePrice = async () => {
     const exch = this.props.exchange;
     const exchange = new ccxt[exch]();
