@@ -6,6 +6,7 @@ import Price from "./Components/Price";
 import SelectExchange from "./Components/SelectExchange";
 import SelectTicker from "./Components/SelectTicker";
 import FetchOHLCV from "./Components/FetchOHLCV";
+import CandleStickChart from "./Components/CandleStickChart";
 
 import "./App.css";
 
@@ -59,6 +60,10 @@ class App extends Component {
             exchange={this.state.exchangeChoosen}
             symbol={this.state.pairChoosen}
           />
+          {/* <CandleStickChart
+            exchange={this.state.exchangeChoosen}
+            symbol={this.state.pairChoosen}
+          /> */}
         </div>
       </div>
     );
