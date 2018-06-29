@@ -1,0 +1,9 @@
+.chart {
+  position: flex;
+  width: auto;
+  overflow: hidden;
+}
+
+svg.react-stockchart {
+  left: 0;
+}

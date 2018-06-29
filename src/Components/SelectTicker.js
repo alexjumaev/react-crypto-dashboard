@@ -23,7 +23,11 @@ export default class SelectTicker extends React.Component {
 
   getPairs = async () => {
     const exch = this.props.exchange;
-    const exchange = new ccxt[exch]();
+    const exchange = new ccxt[exch]({
+      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      enableRateLimit: true,
+      timeout: 30000
+    });
     const tickers = await exchange.loadMarkets();
     const pairs = Object.keys(tickers);
     this.setState({

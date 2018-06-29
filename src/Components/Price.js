@@ -11,6 +11,10 @@ export default class Price extends React.Component {
     setInterval(this.updatePrice, 20000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.updatePrice);
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.symbol !== prevProps.symbol) {
       this.updatePrice();
@@ -19,7 +23,11 @@ export default class Price extends React.Component {
 
   updatePrice = async () => {
     const exch = this.props.exchange;
-    const exchange = new ccxt[exch]();
+    const exchange = new ccxt[exch]({
+      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      enableRateLimit: true,
+      timeout: 30000
+    });
     const ticker = await exchange.fetchTicker(this.props.symbol);
     this.setState({
       price: ticker.last.toFixed(2)
