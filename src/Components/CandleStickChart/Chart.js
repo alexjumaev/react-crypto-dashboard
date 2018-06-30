@@ -79,7 +79,7 @@ class CandleStickChart extends React.Component {
             rectWidth={60}
             at="bottom"
             orient="bottom"
-            displayFormat={timeFormat("%d:%m")}
+            displayFormat={timeFormat("%d-%m-%Y")}
           />
           <MouseCoordinateY
             at="right"

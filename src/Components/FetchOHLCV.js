@@ -1,11 +1,13 @@
 import React from "react";
 import ccxt from "ccxt";
 
+const proxyAddress = "https://pure-mountain-67034.herokuapp.com/";
+
 export default function SelectExchange(props) {
   const getCandles = async () => {
     const exch = props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: proxyAddress,
       enableRateLimit: true,
       timeout: 30000
     });
@@ -16,7 +18,7 @@ export default function SelectExchange(props) {
   const getTrades = async () => {
     const exch = props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: proxyAddress,
       enableRateLimit: true,
       timeout: 30000
     });
@@ -27,7 +29,7 @@ export default function SelectExchange(props) {
   const getOrderBook = async () => {
     const exch = props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: proxyAddress,
       enableRateLimit: true,
       timeout: 30000
     });
@@ -38,7 +40,7 @@ export default function SelectExchange(props) {
   const getTickers = async () => {
     const exch = props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: proxyAddress,
       enableRateLimit: true,
       timeout: 30000
     });
@@ -49,7 +51,7 @@ export default function SelectExchange(props) {
   const getMarkets = async () => {
     const exch = props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: proxyAddress,
       enableRateLimit: true,
       timeout: 30000
     });
@@ -60,7 +62,7 @@ export default function SelectExchange(props) {
   const getCurrencies = async () => {
     const exch = props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: proxyAddress,
       enableRateLimit: true,
       timeout: 30000
     });

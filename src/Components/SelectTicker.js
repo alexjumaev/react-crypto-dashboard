@@ -24,7 +24,7 @@ export default class SelectTicker extends React.Component {
   getPairs = async () => {
     const exch = this.props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: "https://pure-mountain-67034.herokuapp.com/",
       enableRateLimit: true,
       timeout: 30000
     });

@@ -8,7 +8,7 @@ export default class Price extends React.Component {
 
   componentDidMount() {
     this.updatePrice();
-    setInterval(this.updatePrice, 20000);
+    setInterval(this.updatePrice, 5000);
   }
 
   componentWillUnmount() {
@@ -24,7 +24,7 @@ export default class Price extends React.Component {
   updatePrice = async () => {
     const exch = this.props.exchange;
     const exchange = new ccxt[exch]({
-      proxy: "https://hodlwatch-proxy.herokuapp.com/",
+      proxy: "https://pure-mountain-67034.herokuapp.com/",
       enableRateLimit: true,
       timeout: 30000
     });

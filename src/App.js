@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ccxt from "ccxt";
+// import ccxt from "ccxt";
 
 import Price from "./Components/Price";
 import SelectExchange from "./Components/SelectExchange";
@@ -15,7 +15,8 @@ class App extends Component {
 
     this.state = {
       exchangeChoosen: "bittrex",
-      pairChoosen: "BTC/USDT"
+      pairChoosen: "BTC/USDT",
+      showChart: false
     };
   }
 
@@ -32,14 +33,18 @@ class App extends Component {
     });
   };
 
+  handleShowChart = () => {
+    this.setState(() => {
+      return { showChart: !this.state.showChart };
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Библиотека CCXT</h1>
-          <h1 className="App-title">
-            Колличество поддерживаемых бирж - {ccxt.exchanges.length}
-          </h1>
+          <h1 className="App-title">Тестовая сборка по работе с биржами</h1>
+          <h1 className="App-title">Колличество поддерживаемых бирж - 8</h1>
         </header>
         <div>
           <SelectExchange
@@ -59,10 +64,14 @@ class App extends Component {
             exchange={this.state.exchangeChoosen}
             symbol={this.state.pairChoosen}
           />
-          <CandleStickChart
-            exchange={this.state.exchangeChoosen}
-            symbol={this.state.pairChoosen}
-          />
+
+          <button onClick={this.handleShowChart}>SHOW CHART</button>
+          {this.state.showChart ? (
+            <CandleStickChart
+              exchange={this.state.exchangeChoosen}
+              symbol={this.state.pairChoosen}
+            />
+          ) : null}
         </div>
       </div>
     );
