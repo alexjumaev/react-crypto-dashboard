@@ -8,7 +8,7 @@ export default class Price extends React.Component {
 
   componentDidMount() {
     this.updatePrice();
-    setInterval(this.updatePrice, 10000);
+    // setInterval(this.updatePrice, 10000);
   }
 
   componentWillUnmount() {

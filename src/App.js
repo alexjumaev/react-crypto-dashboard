@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import ccxt from "ccxt";
+import ccxt from "ccxt";
 
 import Price from "./Components/Price";
 import SelectExchange from "./Components/SelectExchange";
@@ -44,7 +44,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Тестовая сборка по работе с биржами</h1>
-          <h1 className="App-title">Колличество поддерживаемых бирж - 8</h1>
+          <h1 className="App-title">
+            Колличество поддерживаемых бирж - {ccxt.exchanges.length}
+          </h1>
         </header>
         <div>
           <SelectExchange
