@@ -1,4 +1,4 @@
-## React Crypto Dashboard
+## Testing exchanges API
 
 Install:
 
